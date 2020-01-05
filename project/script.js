@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 // let percone = {
 //     name: "Andrey",
@@ -12,9 +12,28 @@
 
 // console.log(percone.x);
 
-let x = 10,
-    y = 10;
-// x++;
-// y--;
-console.log(x+1);
-console.log(--y);
+//var x = +prompt('Введите число меньше 10', '');
+
+//     if(x<10) 
+//     {
+//         confirm('Правда');
+//     }
+//     else if (x==10) {
+//         confirm('Вы ввели 10')
+//     }
+//     else {
+//         confirm('Ложь !');
+//     }
+
+var x = 15;
+switch (x) {
+    case x <= 10:
+        console.log('Правильно','');
+        break;
+    case x == 10:
+        console.log('Вы ввели число равное 10','');
+        break;
+    case x >= 10:
+        console.log('Вы ввели чило больше','');
+        break;
+}
