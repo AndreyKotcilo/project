@@ -1,39 +1,17 @@
 'use strict'
 
-// let percone = {
-//     name: "Andrey",
-//     age: 24,
-// }
+let money = +prompt('Ваш бюджет на месяц ?', '');
+let time = prompt('Введите дату','');
+let expenses = prompt('Будут обязательные расходы','Да/Нет');
+let expenses1 = +prompt('Во сколько обойдется','');
 
-// //let answer = confirm("Are you here ?")
-// //console.log(answer);
-
-// let x = prompt('Что Вы хотите узнать ?','')
-
-// console.log(percone.x);
-
-//var x = +prompt('Введите число меньше 10', '');
-
-//     if(x<10) 
-//     {
-//         confirm('Правда');
-//     }
-//     else if (x==10) {
-//         confirm('Вы ввели 10')
-//     }
-//     else {
-//         confirm('Ложь !');
-//     }
-
-var x = 15;
-switch (x) {
-    case x <= 10:
-        console.log('Правильно','');
-        break;
-    case x == 10:
-        console.log('Вы ввели число равное 10','');
-        break;
-    case x >= 10:
-        console.log('Вы ввели чило больше','');
-        break;
+let appData = {
+    money: money,
+    data: time,
+    expenses: expenses + expenses1,
+    optionalExpenses: '',
+    incom: '',
+    savings: false
 }
+
+var x = alert((money-expenses1)/30);
