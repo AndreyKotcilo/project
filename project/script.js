@@ -2,31 +2,27 @@
 
 let money = +prompt('Ваш бюджет на месяц ?', '');
 let time = prompt('Введите дату','');
-// let expenses = prompt('Будут обязательные расходы','Да/Нет');
-// if (expenses == "Нет") { }
-// else if (expenses == "Да") {
-//      let expenses1 = +prompt('Во сколько обойдется','');
-//     ((typeof(expenses1)) === 'string' && (typeof(expenses1)) != null && expenses1 != '' && expenses1.length < 50); 
-//  }
-//  else {
-//      alert('Вы ввели не прильный ответ');
-//  };
 let expenses;
-let expenses1;
 let i = 0;
 while (expenses = prompt('Будут обязательные расходы','Да/Нет'), i < 1) {
     if (expenses === 'Нет') {
-        i++
+        i++;
         break;
     }
      else if (expenses === 'Да') {
-        expenses1 = +prompt('Во сколько обойдется','');
-        i++
+        expensesFunc ();
         break;
     }
     else { alert('Вы вввели не правильный вариант')}
-    
 }
+var expenses1;
+function expensesFunc () {
+    expenses1 = +prompt('Во сколько обойдется','');
+    while(isNaN(expenses1) || expenses1 == "" || expenses1 == null) {
+        expenses1 = +prompt('Во сколько обойдется','');
+    }
+}
+
 let appData = {
     budget: money,
     data: time,
@@ -36,7 +32,7 @@ let appData = {
     savings: false
 };
 
-appData.DayMoney = (money - expenses1) / 30;
+appData.DayMoney = (money / 30).toFixed();
 alert(appData.DayMoney);
 
 console.log("Доход:"+ appData.budget);
@@ -58,15 +54,4 @@ else if (appData.DayMoney > 1000) {
 }
 else {
     alert('Ошибка');
-};
-// let t = +prompt('Числа исключения', '');
-
-// for(var i = 1; i < 9; i++){
-//     if (i == t) {
-//         continue
-//     }
-//     // if (i == r) {
-//     //     continue
-//     // }
-//  console.log(i)
-// }
+}
